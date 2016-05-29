@@ -5,8 +5,12 @@
  */
 package JADE_exemple_personnel;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,22 +20,120 @@ public class mainWindow extends javax.swing.JFrame {
 
     private final int taillePixel = 5;
     private Graphics g2d;
-    private Grille grille;
+    private int grille[][];
+    private JPanel panels[][];
     /**
      * Creates new form mainWindow
      */
     public mainWindow() {
         initComponents();
-        grille = new Grille(100, 50);
-        grille.init();
+        
+        GenerateurGrille newgrille = new GenerateurGrille(9, -9, 100, 50, 3);
+        grille = newgrille.generer();
+        
+        jPanel1.setLayout(new GridLayout(50,100));
+        panels = new JPanel[50][100];
+        for(int j=0; j<grille.length; j++){
+            for(int i=0; i<grille[j].length; i++){
+               panels[j][i] = new JPanel();
+               drawCase(i,j, grille[j][i]);
+               panels[j][i].setPreferredSize(new Dimension(taillePixel, taillePixel));
+               jPanel1.add(panels[j][i]);
+            }
+        }
+        
+        // Affichage grille test
+        for(int j=0; j<grille.length; j++){
+            for(int i=0; i<grille[j].length; i++){
+                if(grille[j][i] >=0)
+                    System.out.print("+");
+                System.out.print(grille[j][i] + " ");
+            }
+            System.out.println();
+        }   
+        
     }
+    
+    
+    private void drawCase(int i, int j, int temp){
+        switch (temp) {
+            case 10:
+                panels[j][i].setBackground(new Color(196,10,12));
+                break;
+            case 9:
+                panels[j][i].setBackground(new Color(204,30,28));
+                break;
+            case 8:
+                panels[j][i].setBackground(new Color(204,46,44));
+                break;
+            case 7:
+                panels[j][i].setBackground(new Color(212,74,76));
+                break;   
+            case 6:
+                panels[j][i].setBackground(new Color(220,94,92));
+                break;
+            case 5:
+                panels[j][i].setBackground(new Color(244,122,124));
+                break;   
+            case 4:
+                panels[j][i].setBackground(new Color(236,138,140));
+                break; 
+            case 3:
+                panels[j][i].setBackground(new Color(244,158,156));
+                break; 
+            case 2:
+                panels[j][i].setBackground(new Color(244,178,180));
+                break;    
+            case 1:
+                panels[j][i].setBackground(new Color(252,202,204));
+                break;          
+            case -10:
+                panels[j][i].setBackground(new Color(12,10,196));
+                break;
+            case -9:
+                panels[j][i].setBackground(new Color(36,34,204));
+                break;
+            case -8:
+                panels[j][i].setBackground(new Color(52,54,212));
+                break;
+            case -7:
+                panels[j][i].setBackground(new Color(68,70,212));
+                break;   
+            case -6:
+                panels[j][i].setBackground(new Color(92,94,220));
+                break;
+            case -5:
+                panels[j][i].setBackground(new Color(108,110,220));
+                break;   
+            case -4:
+                panels[j][i].setBackground(new Color(140,142,244));
+                break; 
+            case -3:
+                panels[j][i].setBackground(new Color(156,158,236));
+                break; 
+            case -2:
+                panels[j][i].setBackground(new Color(180,182,244));
+                break;    
+            case -1:
+                panels[j][i].setBackground(new Color(204,202,252));
+                break;    
+            case 0:
+                panels[j][i].setBackground(new Color(252,202,204));
+                break; 
+            default:
+                panels[j][i].setBackground(new Color(254,254,254));
+                break;
+        }        
+    }
+    
     
     public void draw(){
     jPanel1.repaint();
-        for(int i=0; i<grille.largeur; i++){
-            for(int j=0; j<grille.hauteur; j++){
-                if(this.grille.tab[i][j] != 1000){
-                    g2d.drawOval(i*taillePixel, j*taillePixel, taillePixel, taillePixel);
+    
+        for(int i=0; i<grille.length; i++){
+            for(int j=0; j<grille[0].length; j++){
+                if(this.grille[i][j] != 1000){
+                    //g2d.drawOval(i*taillePixel, j*taillePixel, taillePixel, taillePixel);
                 }
             }
         }

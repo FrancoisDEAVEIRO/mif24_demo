@@ -119,21 +119,4 @@ public class GenerateurGrille {
         return tab;
     }
     
-    
-    public static void main(String[] args) {
-        GenerateurGrille grille = new GenerateurGrille(9, -9, 100, 50, 3);
-        int tab[][] = grille.generer();
-        
-        // Affichage
-        for(int j=0; j<tab.length; j++){
-            for(int i=0; i<tab[j].length; i++){
-                if(tab[j][i] >=0)
-                    System.out.print("+");
-                System.out.print(tab[j][i] + " ");
-            }
-            System.out.println();
-        }  
-
-    }
-    
 }
