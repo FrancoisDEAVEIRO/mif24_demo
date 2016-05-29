@@ -3,14 +3,13 @@ package JADE_exemple_personnel;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
-import jade.core.behaviours.SimpleBehaviour;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 
 
-public class capteurAgent extends Agent {
+public class CapteurAgent extends Agent {
     @Override
     protected void setup() 
     { 
@@ -36,7 +35,7 @@ public class capteurAgent extends Agent {
                     // Création et envoie d'un message à l'agent principal
                     ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
                     msg.setContent("envoi d'informations");
-                    msg.addReceiver(new AID("mainAgent", AID.ISLOCALNAME));
+                    msg.addReceiver(new AID("MainAgent", AID.ISLOCALNAME));
                     send(msg);
                     block(1000);
                 }
