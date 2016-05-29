@@ -18,14 +18,17 @@ import javax.swing.JPanel;
  */
 public class mainWindow extends javax.swing.JFrame {
 
+    MainAgent agent;
     private final int taillePixel = 5;
-    private Graphics g2d;
     private int grille[][];
     private JPanel panels[][];
     /**
      * Creates new form mainWindow
+     * @param mainagent main agent
      */
-    public mainWindow() {
+    public mainWindow(MainAgent mainagent) {
+        
+        agent = mainagent;
         initComponents();
         
         GenerateurGrille newgrille = new GenerateurGrille(9, -9, 100, 50, 3);
@@ -126,18 +129,6 @@ public class mainWindow extends javax.swing.JFrame {
         }        
     }
     
-    
-    public void draw(){
-    jPanel1.repaint();
-    
-        for(int i=0; i<grille.length; i++){
-            for(int j=0; j<grille[0].length; j++){
-                if(this.grille[i][j] != 1000){
-                    //g2d.drawOval(i*taillePixel, j*taillePixel, taillePixel, taillePixel);
-                }
-            }
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -244,7 +235,7 @@ public class mainWindow extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainWindow().setVisible(true);
+                new mainWindow(null).setVisible(true);
             }
         });
     }

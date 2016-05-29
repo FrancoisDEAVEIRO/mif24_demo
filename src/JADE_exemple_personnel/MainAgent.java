@@ -11,15 +11,18 @@ import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
+import javax.swing.JFrame;
 
 public class MainAgent extends Agent {
+    JFrame mainwindow;
     int nbCapteur = 0;
     
     @Override
     protected void setup() 
     { 
         System.out.println("Création de l'agent principal : " + getLocalName());
-        
+        mainwindow = new mainWindow(this);
+        mainwindow.setVisible(true);
         // Enregistrement de l'agent dans le Directory Facilitator
         try{ 
             DFAgentDescription dfd = new DFAgentDescription();
