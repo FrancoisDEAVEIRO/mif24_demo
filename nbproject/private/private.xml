@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/BookSellerGui.java</file>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/DemoJade.java</file>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/Vendeur.java</file>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/Portail.java</file>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/SuperAgent.java</file>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/BookSellerAgent.java</file>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/Acheteur.java</file>
-            <file>file:/E:/Documents/fac/M1/S2/MIF24/DemoJade/src/JADE_exemple_personnel/BookBuyerAgent.java</file>
+            <file>file:/E:/Documents/fac/M1/S2/MIF24/mif24_demo/src/JADE_exemple_personnel/GenerateurGrille.java</file>
+            <file>file:/E:/Documents/fac/M1/S2/MIF24/mif24_demo/src/JADE_exemple_personnel/mainWindow.java</file>
+            <file>file:/E:/Documents/fac/M1/S2/MIF24/mif24_demo/src/JADE_exemple_personnel/CasePanel.java</file>
+            <file>file:/E:/Documents/fac/M1/S2/MIF24/mif24_demo/src/JADE_exemple_personnel/MainAgent.java</file>
+            <file>file:/E:/Documents/fac/M1/S2/MIF24/mif24_demo/src/JADE_exemple_personnel/CapteurAgent.java</file>
         </group>
     </open-files>
 </project-private>
